@@ -7,6 +7,13 @@
                 Blank Page
                 <small>Subheading</small>
             </h1>
+            <?php
+                    $sql = "select * from users";
+                    $result = $database->query($sql);
+                    while ($row = mysqli_fetch_assoc($result)){
+                        echo $row['username'] . "<br>";
+                    }
+            ?>
             <ol class="breadcrumb">
                 <li>
                     <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
