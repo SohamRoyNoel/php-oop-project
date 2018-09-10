@@ -8,11 +8,25 @@
                 <small>Subheading</small>
             </h1>
             <?php
-                    $sql = "select * from users";
-                    $result = $database->query($sql);
-                    while ($row = mysqli_fetch_assoc($result)){
-                        echo $row['username'] . "<br>";
+                    /*$user = new User();
+                    $rs = $user->find_all_users();
+                    while ($row = mysqli_fetch_assoc($rs)){
+                        echo $user->id = $row['id'] . "<br>";
+                        echo $user->username = $row['username'] . "<br>";
+                        echo $user->password = $row['password'] . "<br>";
+                        echo $user->first_name = $row['first_name'] . "<br>";
+                        echo $user->last_name = $row['last_name'] . "<br>";
+                    }*/
+
+                    $users = User::find_all_users();
+                    foreach ($users as $u){
+                        echo $u->username . "<br>";
                     }
+                    echo "<br>";
+                    $found = User::find_selected_users(1);
+                    echo $found->username;
+
+
             ?>
             <ol class="breadcrumb">
                 <li>

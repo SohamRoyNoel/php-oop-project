@@ -1,5 +1,7 @@
+<?php session_start(); ?>
 <?php include("includes/header.php"); ?>
 
+<?php ob_start()?>
 
         <div class="row">
 
